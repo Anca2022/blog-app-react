@@ -30,6 +30,11 @@
 .App .navbar nav a {
   width: 60px;
 }
+.App .navbar nav .active-link {
+  font-weight: 500;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid black;
+}
 .App .navbar nav a:hover {
   font-weight: 500;
 }

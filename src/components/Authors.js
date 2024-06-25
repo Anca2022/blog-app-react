@@ -1,5 +1,14 @@
 export default function Authors() {
     return (
-        <>Authors</>
+        <div>
+            <h1>Authors</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
+        </div>
     );
 }

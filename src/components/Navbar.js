@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 export default function Navbar() {
     return (
         <div className="navbar">
@@ -8,9 +8,9 @@ export default function Navbar() {
                 </Link>
             </div>
             <nav>
-                <Link to='/'>Home</Link>
-                <Link to='/authors'>Authors</Link>
-                <Link to='/admin'>Admin</Link>
+                <NavLink className={({isActive}) => isActive ? "active-link" : null} to='/'>Home</NavLink>
+                <NavLink className={({isActive}) => isActive ? "active-link" : null} to='/authors'>Authors</NavLink>
+                <NavLink className={({isActive}) => isActive ? "active-link" : null} to='/admin'>Admin</NavLink>
             </nav>
             
         </div>
