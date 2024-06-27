@@ -1,14 +1,27 @@
+import { fakeArticles, fakeAuthors } from "../fakeData";
+import Featured from './Featured';
+import Sidebar from './Sidebar'; 
+import ArticleCard from './ArticleCard';
 export default function Homepage() {
+    const articles = fakeArticles; 
+    const authors = fakeAuthors; 
+    // let article = articles.filter(article => article.featured===true); 
     return (
-        <div>
-            <h1>Homepage</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
+        <div className='homepage container'>
+            <Featured article = {articles.filter(article => article.featured===true)}/>
+            <main>
+                <div className='article-cards-container'>
+                    {
+                        articles.map(article => {
+                            if(article.featured===false) {
+                                let author = authors.find(author => author.authorId === article.authorId)
+                                return <ArticleCard key = {article.id} article = {article} author={author} />
+                            } else return null; 
+                        })
+                    }
+                </div>
+                <Sidebar authors = {authors}/>
+            </main>
         </div>
     );
 }
