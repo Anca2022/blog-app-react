@@ -1,5 +1,5 @@
-export default function Featured() {
+export default function Featured(props) {
     return (
-        <>Featured Article</>
+        <>Featured article: {props.article[0].title}</>
     );
 }
