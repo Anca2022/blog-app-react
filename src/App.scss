@@ -1,103 +1,228 @@
 .App {
-    display:flex;
-    flex-direction:column;
-    min-height:100vh;
-    .container{
-      max-width: 1250px;
-      width: 100%;
-      margin:0 auto;
-    }  
-    .navbar{
-      padding:1rem;
-      display: flex;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  .container{
+    max-width: 1100px;
+    width: 100%;
+    margin:0 auto;
+  }  
+  .navbar{
+    padding:1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    svg{
+      width:50px;
+      height: 50px;
+    }
+    nav{
+      flex-basis: 50%;
+      display:flex;
       flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      svg{
-        width:50px;
-        height: 50px;
+      justify-content: end;
+      gap:10%;
+      a{
+        width: 60px;
+        text-align:center;
       }
-      nav{
-        flex-basis: 50%;
-        display:flex;
-        flex-direction: row;
-        justify-content: end;
-        gap:10%;
-        a{
-          width: 60px;
-          text-align:center;
-        }
-        .active-link{ 
-          font-weight: 500;
-          padding-bottom:0.2rem;
-          border-bottom: 1px solid black;
-        }
-        a:hover{
-          font-weight: 500;
-        }
+      .active-link{ 
+        font-weight: 500;
+        padding-bottom:0.2rem;
+        border-bottom: 1px solid black;
       }
-    }
-
-    .homepage{
-      padding:1rem; 
-      main{
-        padding-top:3rem; 
-        padding-bottom:3rem;
-        .article-cards-container{
-          display:flex;
-          flex-direction:row;
-          flex-wrap: wrap;
-        }  
-      } 
-       
-    }
-
-    .footer{
-      background-color: #27282c;
-      color:rgba(255, 255, 255, 0.7);
-      padding-top:2rem;
-      padding-bottom:1rem;
-      margin-top:auto;
-      .media{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap:50px;
-        margin-bottom:2rem;
-        a{
-          padding:0.6rem 0.7rem;
-          border-radius: 50%;
-          transition: 0.6s ease;
-        }
-        a:hover{
-          background-color: #3a3c42;
-          transition: 0.6s ease;
-        }
-        svg{
-          width:20px;
-          height:20px;
-          fill:currentColor;
-        }
+      a:hover{
+        font-weight: 500;
       }
-      
     }
   }
+  .button{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap:5px;
+    align-items: center;
+    margin-top:2rem;
+    margin-bottom:0.5rem; 
+    font-size: 18px;
+    font-weight:500;
+    span::before{
+      content:'';
+      display:block;
+      position:relative;
+      height:2px;
+      width:100%;
+      background-color:#999999;
+      bottom: -30px;
+    }
+    span::after{
+      content:'';
+      display:block;
+      position:relative;
+      height:2px;
+      width:0;
+      background-color:black;
+      bottom: -4px;
+      transition: 0.3s ease-in;
+    }
+    svg{
+      fill:currentColor;
+    }
+  }
+  .homepage{
+    padding:1rem; 
+    .featured-article{
+      margin: 1rem auto 0 auto;
+      max-width:600px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #d2d2d2;
+      overflow: hidden;
+      transition: 0.3s ease;
+      .featured-image{
+        max-width:600px;
+        img{
+          width:100%;
+        }
+      }
+      .featured-article-infos{
+        padding:1.5rem;
+        margin-top:1rem;
+        h2{
+          font-size:24px;
+        }
+        p{
+          margin-top:1rem;
+          color:#707070;
+          font-size: 15px;
+        }
+      }
+      &:hover{
+        padding:0;
+        transform: scale(1.02);
+        transition: 0.3s ease;
+        .featured-article-infos{
+          .button{
+            span::after{
+              width:100%;
+            }
+          }
+        }
+      }
+    }    
+    main{
+      padding-top:3rem; 
+      padding-bottom:3rem;
+      .article-cards-container{
+        display:flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+      }  
+    }  
+  }
+  .footer{
+    background-color: #27282c;
+    color:rgba(255, 255, 255, 0.7);
+    padding-top:2rem;
+    padding-bottom:1rem;
+    margin-top:auto;
+    text-align: center;
+    .media{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap:50px;
+      margin-bottom:2rem;
+      a{
+        padding:0.6rem 0.7rem;
+        border-radius: 50%;
+        transition: 0.6s ease;
+      }
+      a:hover{
+        background-color: #3a3c42;
+        transition: 0.6s ease;
+      }
+      svg{
+        width:20px;
+        height:20px;
+        fill:currentColor;
+      }
+    }
+  }
+}
   
-  @media (min-width:768px){
-    .App{
-      .homepage{
-        main{
+@media (min-width:768px){
+  .App{
+    .button{
+      margin-top:auto;
+      margin-bottom:1rem;
+      span::before{
+        height: 3px;
+      }
+      span::after{
+        height: 3px;
+        bottom:-3px;
+      }
+    }
+    .homepage{
+      .featured-article{
+        max-width:unset;
+        display: flex;
+        flex-direction:row;
+        .featured-image{
+          flex-basis:60%;
+          max-width:700px;
+          max-height:400px;
+          img{
+            height:100%;
+            object-fit: cover;
+          }
+        }
+        .featured-article-infos{
           display:flex;
-          flex-direction:row;
-          justify-content: space-between;
-          .article-cards-container{
-            flex-basis:70%;
-          }          
-          &:last-child{
-            flex-basis:30%; 
+          flex-direction: column;
+        }
+      }
+      main{
+        display:flex;
+        flex-direction:row;
+        justify-content: space-between;
+        .article-cards-container{
+          flex-basis:70%;
+        }          
+        &:last-child{
+          flex-basis:30%; 
+        }
+      }
+    }
+  }
+}
+@media (min-width:1024px){
+  .App{
+    .button{
+      span::after{
+        height: 3px;
+        bottom:-1px;
+      }
+    }
+    .homepage{
+      .featured-article{
+        margin-top:1.5rem;
+        .featured-article-infos{
+          padding-top:3rem;
+          h2{
+            font-size:28px;
+          }
+          p{
+            font-size:16px;
+          }
+          .button{
+            font-size:20px;
+            margin-bottom:2rem;
           }
         }
       }
     }
   }
+}
