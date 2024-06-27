@@ -2,13 +2,15 @@ import { fakeArticles, fakeAuthors } from "../fakeData";
 import Featured from './Featured';
 import Sidebar from './Sidebar'; 
 import ArticleCard from './ArticleCard';
+import { Link } from "react-router-dom";
 export default function Homepage() {
     const articles = fakeArticles; 
     const authors = fakeAuthors; 
-    // let article = articles.filter(article => article.featured===true); 
+    let featuredArticle = articles.find(article => article.featured===true); 
+    let featuredArticleAuthor = authors.find(author => author.authorId === featuredArticle.authorId);
     return (
         <div className='homepage container'>
-            <Featured article = {articles.filter(article => article.featured===true)}/>
+            <Link to={`/article-details/${featuredArticle.title}`} state={[featuredArticle, featuredArticleAuthor]}><Featured article = {featuredArticle} author = {featuredArticleAuthor}/></Link>
             <main>
                 <div className='article-cards-container'>
                     {

@@ -4,7 +4,7 @@
   min-height: 100vh;
 }
 .App .container {
-  max-width: 1250px;
+  max-width: 1100px;
   width: 100%;
   margin: 0 auto;
 }
@@ -38,8 +38,75 @@
 .App .navbar nav a:hover {
   font-weight: 500;
 }
+.App .button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 5px;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 18px;
+  font-weight: 500;
+}
+.App .button span::before {
+  content: "";
+  display: block;
+  position: relative;
+  height: 2px;
+  width: 100%;
+  background-color: #999999;
+  bottom: -30px;
+}
+.App .button span::after {
+  content: "";
+  display: block;
+  position: relative;
+  height: 2px;
+  width: 0;
+  background-color: black;
+  bottom: -4px;
+  transition: 0.3s ease-in;
+}
+.App .button svg {
+  fill: currentColor;
+}
 .App .homepage {
   padding: 1rem;
+}
+.App .homepage .featured-article {
+  margin: 1rem auto 0 auto;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #d2d2d2;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+.App .homepage .featured-article .featured-image {
+  max-width: 600px;
+}
+.App .homepage .featured-article .featured-image img {
+  width: 100%;
+}
+.App .homepage .featured-article .featured-article-infos {
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+.App .homepage .featured-article .featured-article-infos h2 {
+  font-size: 24px;
+}
+.App .homepage .featured-article .featured-article-infos p {
+  margin-top: 1rem;
+  color: #707070;
+  font-size: 15px;
+}
+.App .homepage .featured-article:hover {
+  padding: 0;
+  transform: scale(1.02);
+  transition: 0.3s ease;
+}
+.App .homepage .featured-article:hover .featured-article-infos .button span::after {
+  width: 100%;
 }
 .App .homepage main {
   padding-top: 3rem;
@@ -56,6 +123,7 @@
   padding-top: 2rem;
   padding-bottom: 1rem;
   margin-top: auto;
+  text-align: center;
 }
 .App .footer .media {
   display: flex;
@@ -81,6 +149,36 @@
 }
 
 @media (min-width: 768px) {
+  .App .button {
+    margin-top: auto;
+    margin-bottom: 1rem;
+  }
+  .App .button span::before {
+    height: 3px;
+  }
+  .App .button span::after {
+    height: 3px;
+    bottom: -3px;
+  }
+  .App .homepage .featured-article {
+    max-width: unset;
+    display: flex;
+    flex-direction: row;
+  }
+  .App .homepage .featured-article .featured-image {
+    flex-basis: 60%;
+    max-width: 700px;
+    max-height: 400px;
+  }
+  .App .homepage .featured-article .featured-image img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .App .homepage .featured-article .featured-article-infos {
+    display: flex;
+    flex-direction: column;
+  }
   .App .homepage main {
     display: flex;
     flex-direction: row;
@@ -91,5 +189,27 @@
   }
   .App .homepage main:last-child {
     flex-basis: 30%;
+  }
+}
+@media (min-width: 1024px) {
+  .App .button span::after {
+    height: 3px;
+    bottom: -1px;
+  }
+  .App .homepage .featured-article {
+    margin-top: 1.5rem;
+  }
+  .App .homepage .featured-article .featured-article-infos {
+    padding-top: 3rem;
+  }
+  .App .homepage .featured-article .featured-article-infos h2 {
+    font-size: 28px;
+  }
+  .App .homepage .featured-article .featured-article-infos p {
+    font-size: 16px;
+  }
+  .App .homepage .featured-article .featured-article-infos .button {
+    font-size: 20px;
+    margin-bottom: 2rem;
   }
 }/*# sourceMappingURL=App.css.map */
