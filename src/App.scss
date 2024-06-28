@@ -72,41 +72,66 @@
   }
   .homepage{
     padding:1rem; 
-    .featured-article{
+    .article-card{
       margin: 1rem auto 0 auto;
-      max-width:600px;
       border-radius: 10px;
       box-shadow: 0 0 15px #d2d2d2;
       overflow: hidden;
       transition: 0.3s ease;
-      .featured-image{
-        max-width:600px;
+      max-width:350px;
+      min-height:500px;
+      .article-card-image{
+        max-width:350px;
+        max-height:200px;
+        overflow: hidden;
         img{
           width:100%;
         }
       }
-      .featured-article-infos{
+      .article-card-infos{
+        height:300px;
+        display:flex;
+        flex-direction:column; 
         padding:1.5rem;
         margin-top:1rem;
         h2{
-          font-size:24px;
+          font-size:21px;
         }
         p{
           margin-top:1rem;
           color:#707070;
-          font-size: 15px;
+          font-size: 14px;
+        }
+        .button{
+          margin-top:auto;
         }
       }
       &:hover{
-        padding:0;
+        // padding:0;
         transform: scale(1.02);
         transition: 0.3s ease;
-        .featured-article-infos{
+        .article-card-infos{
           .button{
             span::after{
               width:100%;
             }
           }
+        }
+      }
+    }
+    .featured-article{
+      max-width:600px;
+      min-height: unset;
+      .featured-image{
+        max-width:600px;
+        max-height:unset;
+      }
+      .featured-article-infos{
+        h2{
+          font-size:24px;
+        }
+        p{
+          font-size: 15px;
         }
       }
     }    
@@ -117,6 +142,7 @@
         display:flex;
         flex-direction:row;
         flex-wrap: wrap;
+        gap:15px;
       }  
     }  
   }
@@ -166,8 +192,15 @@
       }
     }
     .homepage{
-      .featured-article{
+      .article-card{
         max-width:unset;
+        width:calc(50% - 10px);
+        .article-card-image{
+          max-width:100%;
+        }
+      }
+      .featured-article{
+        width:unset;
         display: flex;
         flex-direction:row;
         .featured-image{
@@ -180,8 +213,7 @@
           }
         }
         .featured-article-infos{
-          display:flex;
-          flex-direction: column;
+          height:unset;
         }
       }
       main{
@@ -200,13 +232,12 @@
 }
 @media (min-width:1024px){
   .App{
-    .button{
-      span::after{
-        height: 3px;
-        bottom:-1px;
-      }
-    }
     .homepage{
+      .article-card{
+        .article-card-image{
+          max-height:300px;
+        }
+      }
       .featured-article{
         margin-top:1.5rem;
         .featured-article-infos{
@@ -220,7 +251,15 @@
           .button{
             font-size:20px;
             margin-bottom:2rem;
+            span::after{
+              bottom:-1px;
+            }
           }
+        }
+      }
+      main{
+        .article-cards-container{
+          gap:20px;
         }
       }
     }

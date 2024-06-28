@@ -74,39 +74,61 @@
 .App .homepage {
   padding: 1rem;
 }
-.App .homepage .featured-article {
+.App .homepage .article-card {
   margin: 1rem auto 0 auto;
-  max-width: 600px;
   border-radius: 10px;
   box-shadow: 0 0 15px #d2d2d2;
   overflow: hidden;
   transition: 0.3s ease;
+  max-width: 350px;
+  min-height: 500px;
+}
+.App .homepage .article-card .article-card-image {
+  max-width: 350px;
+  max-height: 200px;
+  overflow: hidden;
+}
+.App .homepage .article-card .article-card-image img {
+  width: 100%;
+}
+.App .homepage .article-card .article-card-infos {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+.App .homepage .article-card .article-card-infos h2 {
+  font-size: 21px;
+}
+.App .homepage .article-card .article-card-infos p {
+  margin-top: 1rem;
+  color: #707070;
+  font-size: 14px;
+}
+.App .homepage .article-card .article-card-infos .button {
+  margin-top: auto;
+}
+.App .homepage .article-card:hover {
+  transform: scale(1.02);
+  transition: 0.3s ease;
+}
+.App .homepage .article-card:hover .article-card-infos .button span::after {
+  width: 100%;
+}
+.App .homepage .featured-article {
+  max-width: 600px;
+  min-height: unset;
 }
 .App .homepage .featured-article .featured-image {
   max-width: 600px;
-}
-.App .homepage .featured-article .featured-image img {
-  width: 100%;
-}
-.App .homepage .featured-article .featured-article-infos {
-  padding: 1.5rem;
-  margin-top: 1rem;
+  max-height: unset;
 }
 .App .homepage .featured-article .featured-article-infos h2 {
   font-size: 24px;
 }
 .App .homepage .featured-article .featured-article-infos p {
-  margin-top: 1rem;
-  color: #707070;
   font-size: 15px;
-}
-.App .homepage .featured-article:hover {
-  padding: 0;
-  transform: scale(1.02);
-  transition: 0.3s ease;
-}
-.App .homepage .featured-article:hover .featured-article-infos .button span::after {
-  width: 100%;
 }
 .App .homepage main {
   padding-top: 3rem;
@@ -116,6 +138,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 15px;
 }
 .App .footer {
   background-color: #27282c;
@@ -160,8 +183,15 @@
     height: 3px;
     bottom: -3px;
   }
-  .App .homepage .featured-article {
+  .App .homepage .article-card {
     max-width: unset;
+    width: calc(50% - 10px);
+  }
+  .App .homepage .article-card .article-card-image {
+    max-width: 100%;
+  }
+  .App .homepage .featured-article {
+    width: unset;
     display: flex;
     flex-direction: row;
   }
@@ -176,8 +206,7 @@
        object-fit: cover;
   }
   .App .homepage .featured-article .featured-article-infos {
-    display: flex;
-    flex-direction: column;
+    height: unset;
   }
   .App .homepage main {
     display: flex;
@@ -192,9 +221,8 @@
   }
 }
 @media (min-width: 1024px) {
-  .App .button span::after {
-    height: 3px;
-    bottom: -1px;
+  .App .homepage .article-card .article-card-image {
+    max-height: 300px;
   }
   .App .homepage .featured-article {
     margin-top: 1.5rem;
@@ -211,5 +239,11 @@
   .App .homepage .featured-article .featured-article-infos .button {
     font-size: 20px;
     margin-bottom: 2rem;
+  }
+  .App .homepage .featured-article .featured-article-infos .button span::after {
+    bottom: -1px;
+  }
+  .App .homepage main .article-cards-container {
+    gap: 20px;
   }
 }/*# sourceMappingURL=App.css.map */
