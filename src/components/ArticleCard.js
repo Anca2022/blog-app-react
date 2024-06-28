@@ -1,9 +1,16 @@
+import Button from "./Button";
 export default function ArticleCard(props) {
-    console.log(props);
+    // console.log(props);
     return (
-        <div>
-            <p>{props.article.title}</p>
-            <p> by {props.author.name}</p>
+        <div className='article-card'>
+            <div className="article-card-image">
+                <img src={props.article.image} alt='for article'></img>
+            </div>
+            <div className="article-card-infos">
+                <h2>{props.article.title}</h2>
+                <p>By {props.author.name} - {props.article.date}</p> 
+                <Button/>
+            </div>
         </div>
     );
 }
