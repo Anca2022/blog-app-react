@@ -140,6 +140,39 @@
   flex-wrap: wrap;
   gap: 15px;
 }
+.App .homepage main .sidebar {
+  margin-top: 3rem;
+}
+.App .homepage main .sidebar h3 {
+  text-align: center;
+  background-color: #27282c;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+.App .homepage main .sidebar ul {
+  list-style: none;
+  max-width: 280px;
+  margin: auto;
+}
+.App .homepage main .sidebar ul li {
+  margin-top: 0.5rem;
+  margin-right: 10px;
+  color: #707070;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: 0.3s ease;
+}
+.App .homepage main .sidebar ul li img {
+  margin-right: 15px;
+}
+.App .homepage main .sidebar ul li:hover {
+  background-color: rgba(153, 153, 153, 0.15);
+  transform: scale(1.05);
+}
 .App .footer {
   background-color: #27282c;
   color: rgba(255, 255, 255, 0.7);
@@ -211,13 +244,18 @@
   .App .homepage main {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    gap: 20px;
   }
   .App .homepage main .article-cards-container {
     flex-basis: 70%;
   }
-  .App .homepage main:last-child {
+  .App .homepage main .sidebar {
     flex-basis: 30%;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .App .homepage main .sidebar ul {
+    margin-right: 0;
   }
 }
 @media (min-width: 1024px) {
@@ -245,5 +283,9 @@
   }
   .App .homepage main .article-cards-container {
     gap: 20px;
+  }
+  .App .homepage main .sidebar ul li {
+    font-size: 17px;
+    margin-bottom: 1rem;
   }
 }/*# sourceMappingURL=App.css.map */
