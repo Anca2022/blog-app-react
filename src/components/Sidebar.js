@@ -17,10 +17,6 @@ export default function Sidebar(props) {
                     })
                 }
             </ul>
-
         </div>
-
-
-        //             <Link to = ‘?type=simple’ > Simple </Link>
     );
 }

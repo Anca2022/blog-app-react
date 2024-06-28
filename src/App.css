@@ -74,8 +74,10 @@
 .App .homepage {
   padding: 1rem;
 }
-.App .homepage .article-card {
+.App .homepage a {
   margin: 1rem auto 0 auto;
+}
+.App .homepage .article-card {
   border-radius: 10px;
   box-shadow: 0 0 15px #d2d2d2;
   overflow: hidden;
@@ -85,11 +87,14 @@
 }
 .App .homepage .article-card .article-card-image {
   max-width: 350px;
-  max-height: 200px;
+  aspect-ratio: 350/250;
   overflow: hidden;
 }
 .App .homepage .article-card .article-card-image img {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .App .homepage .article-card .article-card-infos {
   height: 300px;
@@ -149,7 +154,9 @@
   color: rgba(255, 255, 255, 0.9);
   padding: 0.5rem;
   border-radius: 5px;
+  margin: auto;
   margin-bottom: 1rem;
+  max-width: 310px;
 }
 .App .homepage main .sidebar ul {
   list-style: none;
@@ -216,9 +223,11 @@
     height: 3px;
     bottom: -3px;
   }
+  .App .homepage a {
+    width: calc(50% - 10px);
+  }
   .App .homepage .article-card {
     max-width: unset;
-    width: calc(50% - 10px);
   }
   .App .homepage .article-card .article-card-image {
     max-width: 100%;
