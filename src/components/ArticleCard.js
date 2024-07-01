@@ -4,7 +4,7 @@ export default function ArticleCard(props) {
     return (
         <div className='article-card'>
             <div className="article-card-image">
-                <img src={props.article.image} alt='for article'></img>
+                <img src={props.article.mediumImage} alt='for article'></img>
             </div>
             <div className="article-card-infos">
                 <h2>{props.article.title}</h2>
