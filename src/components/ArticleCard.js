@@ -9,7 +9,7 @@ export default function ArticleCard(props) {
             <div className="article-card-infos">
                 <h2>{props.article.title}</h2>
                 <p>By {props.author.name} - {props.article.date}</p> 
-                <Button/>
+                <Button message={'Read article'}/>
             </div>
         </div>
     );

@@ -186,6 +186,24 @@
       }
     }  
   }
+  .author-card{
+    display:flex;
+    flex-direction: row;
+    gap:15px;
+    font-size:14px;
+    transition: 0.3s ease;
+    img{
+      width:64px;
+      height:64px;
+      border-radius:1rem;
+    }
+    p{
+      color:#aaaaaa;
+    }
+    &:hover{
+      transform:scale(1.01);
+    }
+  }
   .authors-page{
     h1{
       text-align:center; 
@@ -206,25 +224,70 @@
         &:last-child{
           border-bottom:none;
         }
-        .author-card{
-          display:flex;
-          flex-direction: row;
-          gap:15px;
-          font-size:14px;
-          transition: 0.3s ease;
-          img{
-            width:64px;
-            height:64px;
-            border-radius:1rem;
-          }
-          p{
-            color:#aaaaaa;
+      }
+    }
+  }
+  .article-page{
+    max-width:700px;
+    margin:auto;
+    padding:1rem;
+    .article-content{
+      .article-title-block{
+        margin-bottom:2rem;
+        text-align: center;
+        h1{
+          font-size: 28px;  
+          margin-bottom: 1rem;
+        }
+        p:last-of-type{
+          font-size: 12px;
+          color:#999999;
+        }
+      }
+      img{
+        width:100%;
+      }
+      section{
+        color:#414243;
+        margin-bottom:3rem;
+        p{
+          margin-top:1rem;
+          line-height: 1.5rem;
+        }
+        h2{
+          margin: 1rem 0 0.5rem 0;
+          line-height: 1.7rem;
+        }
+      }
+    }
+    .author-info{
+      margin-bottom: 3rem;
+      .author-info-top{
+        display: flex; 
+        flex-direction:row;
+        justify-content: space-between;
+        margin-top:1rem;
+        margin-bottom:2rem;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight:600;
+        .written-by{
+          color:#aaaaaa;
+        }
+        .button{
+          margin-top:0;
+          font-size:13px;
+          span::before{
+            bottom:-23px;
           }
           &:hover{
-            transform:scale(1.01);
+            span::after{
+              width:100%;
+            }
           }
         }
       }
+      border-top: 2px solid rgba(170, 170, 170, 0.2);
     }
   }
   .footer{
@@ -316,14 +379,33 @@
         }      
       }
     }
-    .authors-page{
-      .authors-container{
-        li{
-          .author-card{
-            font-size:15px;
-            img{
-              width:80px;
-              height:80px;
+    .author-card{
+      font-size:15px;
+      img{
+        width:80px;
+        height:80px;
+      }
+    }
+    .article-page{
+      padding-top:3rem;
+      .article-content{
+        .article-title-block{
+          margin-bottom:3rem;
+        }
+      }
+      .author-info{
+        .author-info-top{
+          .button{
+            span::before{
+              height:2px;
+            }
+            span::after{
+              height:2px;
+            }
+            &:hover{
+              span::after{
+                height:2px;
+              }
             }
           }
         }
