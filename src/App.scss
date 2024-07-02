@@ -174,9 +174,11 @@
             transition:0.3s ease;
             img{
               margin-right:15px;
+              border-radius: 1rem;
             }
             &:hover{
               background-color: rgba(153, 153, 153, 0.15);
+              border-radius: 1rem;
               transform: scale(1.05);
             }
           }
@@ -201,6 +203,27 @@
         padding-top:0.5rem;
         padding-bottom:2rem;
         border-bottom: 2px solid rgba(170, 170, 170, 0.2);
+        &:last-child{
+          border-bottom:none;
+        }
+        .author-card{
+          display:flex;
+          flex-direction: row;
+          gap:15px;
+          font-size:14px;
+          transition: 0.3s ease;
+          img{
+            width:64px;
+            height:64px;
+            border-radius:1rem;
+          }
+          p{
+            color:#aaaaaa;
+          }
+          &:hover{
+            transform:scale(1.01);
+          }
+        }
       }
     }
   }
@@ -293,13 +316,19 @@
         }      
       }
     }
-    // .authors-page{
-    //   .authors-container{
-    //     li{
-          
-    //     }
-    //   }
-    // }
+    .authors-page{
+      .authors-container{
+        li{
+          .author-card{
+            font-size:15px;
+            img{
+              width:80px;
+              height:80px;
+            }
+          }
+        }
+      }
+    }
   }
 }
 @media (min-width:1024px){

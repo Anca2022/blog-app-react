@@ -175,9 +175,11 @@
 }
 .App .homepage main .sidebar ul li img {
   margin-right: 15px;
+  border-radius: 1rem;
 }
 .App .homepage main .sidebar ul li:hover {
   background-color: rgba(153, 153, 153, 0.15);
+  border-radius: 1rem;
   transform: scale(1.05);
 }
 .App .authors-page h1 {
@@ -197,6 +199,27 @@
   padding-top: 0.5rem;
   padding-bottom: 2rem;
   border-bottom: 2px solid rgba(170, 170, 170, 0.2);
+}
+.App .authors-page .authors-container li:last-child {
+  border-bottom: none;
+}
+.App .authors-page .authors-container li .author-card {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+.App .authors-page .authors-container li .author-card img {
+  width: 64px;
+  height: 64px;
+  border-radius: 1rem;
+}
+.App .authors-page .authors-container li .author-card p {
+  color: #aaaaaa;
+}
+.App .authors-page .authors-container li .author-card:hover {
+  transform: scale(1.01);
 }
 .App .footer {
   background-color: #27282c;
@@ -283,6 +306,13 @@
   }
   .App .homepage main .sidebar ul {
     margin-right: 0;
+  }
+  .App .authors-page .authors-container li .author-card {
+    font-size: 15px;
+  }
+  .App .authors-page .authors-container li .author-card img {
+    width: 80px;
+    height: 80px;
   }
 }
 @media (min-width: 1024px) {
