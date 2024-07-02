@@ -8,7 +8,7 @@ export default function Featured(props) {
             <div className="article-card-infos featured-article-infos">
                 <h2>{props.article.title}</h2>
                 <p>By {props.author.name} - {props.article.date}</p> 
-                <Button/>
+                <Button message = {'Read article'}/>
             </div>
         </div> 
     );
