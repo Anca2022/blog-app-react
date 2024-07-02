@@ -1,14 +1,22 @@
+import { Link } from "react-router-dom";
+import AuthorCard from './AuthorCard';
+import { fakeAuthors } from "../fakeData";
 export default function Authors() {
+    const authors = fakeAuthors; 
     return (
-        <div>
+        <div className="authors-page">
             <h1>Authors</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quae excepturi doloremque corrupti laborum molestiae sint perspiciatis? Mollitia reprehenderit corrupti neque non quas minus nihil modi deserunt commodi sunt, esse autem inventore. Esse nihil magni, necessitatibus illum dolore perspiciatis cumque doloremque dicta mollitia debitis voluptas eius repellendus nostrum! Numquam, accusamus.</p>
+            <ul className="authors-container">
+                {authors.map(author => {
+                        return(
+                            <li key={author.authorId}>
+                                <Link to={`../?author=${author.name}`} >
+                                    <AuthorCard author = {author}/>
+                                </Link>
+                            </li>
+                        );                    
+                    })}
+            </ul>
         </div>
     );
 }
