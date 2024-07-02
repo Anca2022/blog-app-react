@@ -184,6 +184,26 @@
       }
     }  
   }
+  .authors-page{
+    h1{
+      text-align:center; 
+      font-size:28px;
+      margin-top:1.5rem;
+      margin-bottom:5rem;
+    }
+    .authors-container{
+      max-width:700px;
+      margin:auto;
+      list-style: none;
+      margin-bottom:4rem;
+      li{
+        margin:1rem;
+        padding-top:0.5rem;
+        padding-bottom:2rem;
+        border-bottom: 2px solid rgba(170, 170, 170, 0.2);
+      }
+    }
+  }
   .footer{
     background-color: #27282c;
     color:rgba(255, 255, 255, 0.7);
@@ -273,6 +293,13 @@
         }      
       }
     }
+    // .authors-page{
+    //   .authors-container{
+    //     li{
+          
+    //     }
+    //   }
+    // }
   }
 }
 @media (min-width:1024px){
