@@ -310,6 +310,26 @@
   height: 20px;
   fill: currentColor;
 }
+.App .not-found {
+  padding: 4rem 1rem;
+}
+.App .not-found h2 {
+  margin-bottom: 35px;
+}
+.App .not-found p {
+  margin-bottom: 25px;
+}
+.App .not-found button {
+  background-color: #27282c;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.App .not-found button:hover {
+  color: white;
+  scale: 1.01;
+}
 
 @media (min-width: 768px) {
   .App .button {
@@ -418,5 +438,11 @@
   .App .homepage main .sidebar ul li {
     font-size: 17px;
     margin-bottom: 1rem;
+  }
+  .App .not-found {
+    font-size: 1.1rem;
+  }
+  .App .not-found button {
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=App.css.map */
