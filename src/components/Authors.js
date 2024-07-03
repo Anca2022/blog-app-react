@@ -1,10 +1,18 @@
 import { Link } from "react-router-dom";
-import AuthorCard from './AuthorCard';
+import { motion } from "framer-motion";
 import { fakeAuthors } from "../fakeData";
+import AuthorCard from './AuthorCard';
+
 export default function Authors() {
     const authors = fakeAuthors; 
     return (
-        <div className="authors-page">
+        <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{duration:0.3}}
+        className="authors-page"
+        >
             <h1>Authors</h1>
             <ul className="authors-container">
                 {authors.map(author => {
@@ -15,8 +23,9 @@ export default function Authors() {
                                 </Link>
                             </li>
                         );                    
-                    })}
+                    })
+                }
             </ul>
-        </div>
+        </motion.div>
     );
 }

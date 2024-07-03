@@ -1,5 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion'; 
 import Navbar from './components/Navbar';
 import Homepage from './components/Homepage';
 import Authors from './components/Authors'; 
@@ -13,22 +14,23 @@ function App() {
   return (
     <div className="App">      
       <div className='container'>
-      <Navbar />
-    
-    <Routes>
-      <Route path='' element={<Homepage />}> </Route>
-      <Route path='/authors' element={<Authors />}> </Route>
-      <Route path='/article-details/:id' element={<ArticleDetails />}> </Route>
-      <Route path='/admin' element={<Admin />}> </Route>
-      <Route path='*' element={<NotFound />}> </Route>
-    </Routes> 
-  
-    <ScrollToTop />
+        <Navbar />
+      
+        <AnimatePresence wait>
+          <Routes>
+            <Route path='' element={<Homepage />}> </Route>
+            <Route path='/authors' element={<Authors />}> </Route>
+            <Route path='/article-details/:id' element={<ArticleDetails />}> </Route>
+            <Route path='/admin' element={<Admin />}> </Route>
+            <Route path='*' element={<NotFound />}> </Route>
+          </Routes> 
+        </AnimatePresence>
+      
+        <ScrollToTop />
       </div>
       
       <Footer />
       
-
     </div>
     );
 }

@@ -320,6 +320,26 @@
       }
     }
   }
+  .not-found{
+    padding:4rem 1rem;
+    h2{
+      margin-bottom: 35px;
+    }
+    p{
+      margin-bottom: 25px;
+    }
+    button{
+      background-color: #27282c;
+      color:rgba(255, 255, 255, 0.7);
+      padding: 0.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+      &:hover{
+        color:white;
+        scale:1.01;
+      }
+    }
+  }
 }
   
 @media (min-width:768px){
@@ -452,6 +472,12 @@
             }
           }
         }
+      }
+    }
+    .not-found{
+      font-size:1.1rem;
+      button{
+        font-size: 1rem;
       }
     }
   }

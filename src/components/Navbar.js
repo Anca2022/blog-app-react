@@ -9,11 +9,25 @@ export default function Navbar() {
                 </Link>
             </div>
             <nav>
-                <NavLink className={({isActive}) => isActive ? "active-link" : null} to='/'>Home</NavLink>
-                <NavLink className={({isActive}) => isActive ? "active-link" : null} to='/authors'>Authors</NavLink>
-                <NavLink className={({isActive}) => isActive ? "active-link" : null} to='/admin'>Admin</NavLink>
+                <NavLink 
+                className={({isActive}) => isActive ? "active-link" : null} 
+                to='/'
+                >
+                    Home
+                </NavLink>
+                <NavLink 
+                className={({isActive}) => isActive ? "active-link" : null} 
+                to='/authors'
+                >
+                    Authors
+                </NavLink>
+                <NavLink 
+                className={({isActive}) => isActive ? "active-link" : null} 
+                to='/admin'
+                >
+                    Admin
+                </NavLink>
             </nav>
-            
         </div>
     );
 }
