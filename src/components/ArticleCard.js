@@ -3,19 +3,18 @@ import Button from "./Button";
 
 export default function ArticleCard(props) {
     return (
-        <motion.div className='article-card'
-        initial={{ opacity:0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{duration:0.3}}
-        >
-            <div className="article-card-image">
+        <motion.div className='article-card'>
+            <motion.div className="article-card-image"
+            layout
+            style={{aspectRatio: 350/250}}
+            >
                 <motion.img
                 src={props.article.mediumImage}
                 alt={props.article.title}
                 layoutId={`blog-image-${props.article.id}`}
+                style={{width:'100%', height:'100%', objectFit: 'cover', borderRadius: '10px 10px 0 0'}}
                 />
-            </div>
+            </motion.div>
             <div className="article-card-infos">
                 <h2>{props.article.title}</h2>
                 <p>By {props.author.name} - {props.article.date}</p> 
