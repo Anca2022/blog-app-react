@@ -1,42 +1,55 @@
 .App {
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-.App .container {
-  max-width: 1100px;
+.App .nav-container {
+  position: fixed;
+  top: 0;
   width: 100%;
-  margin: 0 auto;
+  background-color: white;
+  z-index: 2;
 }
-.App .navbar {
-  padding: 1rem;
+.App .nav-container .navbar {
+  max-width: 1100px;
+  padding: 1rem 1rem 0 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
 }
-.App .navbar svg {
+.App .nav-container .navbar svg {
   width: 50px;
   height: 50px;
 }
-.App .navbar nav {
+.App .nav-container .navbar nav {
   flex-basis: 50%;
   display: flex;
   flex-direction: row;
   justify-content: end;
   gap: 10%;
 }
-.App .navbar nav a {
+.App .nav-container .navbar nav a {
   width: 60px;
   text-align: center;
 }
-.App .navbar nav .active-link {
+.App .nav-container .navbar nav .active-link {
   font-weight: 500;
   padding-bottom: 0.2rem;
-  border-bottom: 1px solid black;
+  border-bottom: 1.5px solid black;
 }
-.App .navbar nav a:hover {
+.App .nav-container .navbar nav a:hover {
   font-weight: 500;
+}
+.App .nav-shadow {
+  box-shadow: 0 0 15px rgb(233, 233, 233);
+}
+.App .container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
 }
 .App .button {
   display: flex;
@@ -95,9 +108,6 @@
   flex-direction: column;
   padding: 1.5rem;
   margin-top: 1rem;
-}
-.App .homepage .article-card .article-card-infos h2 {
-  font-size: 21px;
 }
 .App .homepage .article-card .article-card-infos p {
   margin-top: 1rem;
@@ -263,10 +273,6 @@
   margin-top: 2.5rem;
   margin-bottom: 2rem;
   text-align: center;
-}
-.App .backdrop .article-page .article-content .article-title-block h1 {
-  font-size: 28px;
-  margin-bottom: 1rem;
 }
 .App .backdrop .article-page .article-content .article-title-block p:last-of-type {
   font-size: 12px;

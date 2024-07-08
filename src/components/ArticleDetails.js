@@ -46,7 +46,12 @@ export default function ArticleDetails({article, author, onClose}) {
                         />
                     </motion.div>
                     <div className="article-title-block">
-                        <h1>{article.title}</h1>
+                        <motion.h2
+                        layoutId={`title-${article.id}`}
+                        style={{fontSize: '28px', marginBottom: '1rem'}}
+                        >
+                            {article.title}
+                        </motion.h2>
                         <p>By {author.name} </p>
                         <p className="date">{article.date}</p>
                     </div>

@@ -36,7 +36,8 @@ export default function Homepage() {
                 paramAuthorName ? 
                 null
                 : 
-                <motion.div className="open-modal"
+                <motion.div
+                className="open-modal"
                 layoutId={`article-blog-${featuredArticle.id}`}
                 onClick={()=> setDialogContent([featuredArticle,featuredArticleAuthor])}
                 > 
@@ -46,17 +47,20 @@ export default function Homepage() {
             <main>
                 <motion.div 
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                animate={{ opacity: 1}}
                 exit={{ opacity: 0 }}
-                layoutId='article-container'
                 className='article-cards-container'
                 >
                     {
                         paramAuthorName && paramAuthor ? 
                         articles.filter( article => article.authorId === paramAuthor.authorId)
                         .map(article => (
-                            <motion.div className="open-modal" 
+                            <motion.div 
+                            className="open-modal" 
                             key={article.id}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1}}
+                            exit={{ opacity: 0 }}
                             layoutId={`article-blog-${article.id}`}
                             onClick={()=> setDialogContent([article, paramAuthor])}
                             >

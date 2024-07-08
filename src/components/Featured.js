@@ -17,7 +17,11 @@ export default function Featured(props) {
                 />
             </motion.div>
             <div className="article-card-infos featured-article-infos">
-                <h2>{props.article.title}</h2>
+                <motion.h2 
+                layoutId={`title-${props.article.id}`}
+                >
+                    {props.article.title}
+                </motion.h2>
                 <p>By {props.author.name} - {props.article.date}</p> 
                 <Button message = {'Read article'}/>
             </div>

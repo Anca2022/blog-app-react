@@ -16,8 +16,13 @@ export default function ArticleCard(props) {
                 />
             </motion.div>
             <div className="article-card-infos">
-                <h2>{props.article.title}</h2>
-                <p>By {props.author.name} - {props.article.date}</p> 
+                <motion.h2
+                layoutId={`title-${props.article.id}`}
+                style={{fontSize:'21px'}}
+                >
+                    {props.article.title}
+                </motion.h2>
+                <p>By {props.author.name} - {props.article.date}</p>
                 <Button message={'Read article'}/>
             </div>
         </motion.div>

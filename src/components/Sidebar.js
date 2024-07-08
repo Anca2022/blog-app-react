@@ -8,7 +8,6 @@ export default function Sidebar(props) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         className="sidebar"
-        layoutId='sidebar'
         >
             <h3>Authors</h3>
             <ul>
