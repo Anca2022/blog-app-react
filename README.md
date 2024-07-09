@@ -13,7 +13,11 @@ Visit https://blog48.netlify.app/ to access the webpage.
 <b><i>Smooth Animations</b></i>: Includes transition animations for a pleasant user experience. </br>
 <b><i>Browse and Filter</b></i>: Users can browse all articles or filter them by author.
 
-
+## Technologies Used
+<b>JavaScript</b>: a programming language used to create interactive and dynamic web content. <br>
+<b>React </b>: a JavaScript library for building user interfaces, particularly single-page applications. <br>
+<b>SCSS</b>: For styling the application. <br>
+<b>Framer Motion</b>: a library for React that provides simple yet powerful animations and gestures for enhancing user experience.
 
 ##
 We hope you find this project useful and enjoyable. If you have any questions or suggestions, feel free to open an issue or contact us directly. Happy coding!
